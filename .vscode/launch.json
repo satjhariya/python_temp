@@ -1,0 +1,28 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "🐍 Python: Debug Current File (uv)",
+            "type": "debugpy",
+            "request": "launch",
+            "program": "${file}",
+            "console": "integratedTerminal",
+            // Leverages your local project environment explicitly
+            "python": "${workspaceFolder}/.venv/Scripts/python.exe",
+            // Prevents step-into from diving deep into Pandas internal source code
+            "justMyCode": true
+        },
+        {
+            "name": "📊 Python: Data Script Diagnostics",
+            "type": "debugpy",
+            "request": "launch",
+            "program": "${file}",
+            "console": "integratedTerminal",
+            "python": "${workspaceFolder}/.venv/Scripts/python.exe",
+            "justMyCode": true,
+            "env": {
+                "PYTHONBREAKPOINT": "ipdb.set_trace"
+            }
+        }
+    ]
+}

@@ -1,0 +1,44 @@
+{
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "label": "Ruff: Format Code Layout",
+            "type": "shell",
+            "command": "uv run ruff format",
+            "problemMatcher": [],
+            "group": "none"
+        },
+        {
+            "label": "Ruff: Lint & Fix Bugs",
+            "type": "shell",
+            "command": "uv run ruff check --fix",
+            "problemMatcher": []
+        },
+        {
+            "label": "Pyrefly: Strict Type Validation",
+            "type": "shell",
+            "command": "uv run pyrefly check",
+            "problemMatcher": [],
+            "group": "none"
+        },
+        {
+            "label": "🚀 Run Full Quality Pipeline",
+            "dependsOrder": "sequence",
+            "dependsOn": [
+                "Ruff: Format Code Layout",
+                "Ruff: Lint & Fix Bugs",
+                "Pyrefly: Strict Type Validation"
+            ],
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            },
+            "presentation": {
+                "reveal": "always",
+                "panel": "dedicated",
+                "clear": true
+            },
+            "problemMatcher": []
+        }
+    ]
+}

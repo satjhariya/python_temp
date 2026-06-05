@@ -1,0 +1,47 @@
+[project]
+name = "test"
+version = "0.1.0"
+description = "Add your description here"
+authors = [
+    {name = "Satish Jhariya", email = "satishjhariya@bel.co.in"},
+]
+readme = "README.md"
+
+requires-python = ">=3.12"
+
+dependencies = []
+
+[dependency-groups]
+dev = [
+    "pyrefly>=1.0.0",
+    "ruff>=0.15.16",
+]
+
+# 🛡️ Pyrefly Configuration (Meta's Static Type Checker)
+[tool.pyrefly]
+# Note: Options must use underscores (_) rather than hyphens (-)
+preset = "default"
+project_includes = ["src", "tests", "**/*.py"]
+project_excludes = ["**/node_modules", "**/build", "**/.*"]
+python_version = "3.12"
+python_platform = "Linux"
+ignore_errors_in_generated_code = true
+
+# 🛠️ Ruff Configuration (Fast Linter and Formatter)
+[tool.ruff]
+target-version = "py312"
+line-length = 88
+
+[tool.ruff.lint]
+# E/W = Errors/Warnings, F = Pyflakes bugs, I = Isort import sorting
+select = ["E", "W", "F", "I"]
+ignore = []
+
+[tool.ruff.format]
+quote-style = "double"
+indent-style = "space"
+
+# 📦 Uv Configuration (Ensures absolute offline handling)
+#[tool.uv]
+#no-index = true
+#find-links = ["C:\\Path\\To\\USB\\python_wheelhouse"] # Change to your local path
