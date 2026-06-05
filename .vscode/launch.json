@@ -8,7 +8,7 @@
             "program": "${file}",
             "console": "integratedTerminal",
             // Leverages your local project environment explicitly
-            "python": "${workspaceFolder}/.venv/Scripts/python.exe",
+            "python": "${workspaceFolder}/.venv/bin/python3",
             // Prevents step-into from diving deep into Pandas internal source code
             "justMyCode": true
         },
@@ -18,7 +18,7 @@
             "request": "launch",
             "program": "${file}",
             "console": "integratedTerminal",
-            "python": "${workspaceFolder}/.venv/Scripts/python.exe",
+            "python": "${workspaceFolder}/.venv/bin/python",
             "justMyCode": true,
             "env": {
                 "PYTHONBREAKPOINT": "ipdb.set_trace"
