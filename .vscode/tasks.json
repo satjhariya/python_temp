@@ -2,18 +2,56 @@
     "version": "2.0.0",
     "tasks": [
         {
+            "label": "Clean Build&Exe",
+            "type": "shell",
+            "command": "rm -rf dist build *.egg-info *.spec",
+            "problemMatcher": [],
+            "group": "none"  
+        },
+
+        {
+            "label": "Generate Exe",
+            "type": "shell",
+            "command": "uv run src/build_exe.py",
+            "problemMatcher": [],
+            "group": "none"  
+        },
+
+        {
+            "label": "Rebuild Exe",
+            "type": "shell",
+            "dependsOrder": "sequence",
+            "dependsOn": [
+                "Clean Build&Exe",
+                "Generate Exe"
+            ],
+            "problemMatcher": [],
+            "group": "none"  
+        },
+
+        {
+            "label": "Run Exe",
+            "type": "shell",
+            "command": "dist/AutomationApp",  // Replace with your actual executable name
+            "problemMatcher": [],
+            "group": "none"
+        },
+
+        {
             "label": "Ruff: Format Code Layout",
             "type": "shell",
             "command": "uv run ruff format",
             "problemMatcher": [],
             "group": "none"
         },
+
         {
             "label": "Ruff: Lint & Fix Bugs",
             "type": "shell",
             "command": "uv run ruff check --fix",
             "problemMatcher": []
         },
+
         {
             "label": "Pyrefly: Strict Type Validation",
             "type": "shell",
@@ -21,6 +59,7 @@
             "problemMatcher": [],
             "group": "none"
         },
+
         {
             "label": "🚀 Run Full Quality Pipeline",
             "dependsOrder": "sequence",

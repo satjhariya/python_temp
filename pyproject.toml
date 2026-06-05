@@ -3,7 +3,7 @@ name = "test"
 version = "0.1.0"
 description = "Add your description here"
 authors = [
-    {name = "Satish Jhariya", email = "satishjhariya@bel.co.in"},
+    {name = "Satish Jhariya", email = "satjhariya@gmail.com"},
 ]
 readme = "README.md"
 
@@ -13,6 +13,7 @@ dependencies = []
 
 [dependency-groups]
 dev = [
+    "pyinstaller>=6.20.0",
     "pyrefly>=1.0.0",
     "ruff>=0.15.16",
 ]
